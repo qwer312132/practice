@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css");
+        body{
+            font-family: cwTeXFangSong;
+        }
+        #content1{
+            color:navy;
+        }
+        #content2{
+            font-size: 1.5em;
+            color:firebrick;
+        }
+    </style>
+    <script>
+        var Adj=["客戶那邊的", "我們的", "負責談需求的", "負責這個部分的", "直到上線前一天", "(雙手一攤)"];
+        var Noun=["專案經理", "主管", "工程師", "設計師", "外包", "User", "聯絡窗口"];
+        var Verb=["當初沒有講清楚", "一直換", "說他肚子不舒服", "擺爛不想做了", "突然開始放長假", "去生小孩了", "離職了", "都沒甚麼 sense", "都沒有跟我講", "以為這些不用做", "一直在狀況外", "做事拖拖拉拉", "還搞不清楚狀況", "Quality 有問題", "東西一直改", "在整我", "突然就沒來了"]
+        var Meme=["Cat.jpg","Harry.jpg","Jacky.jpg","Yao.jpg"];
+        var output="";
+        function start(){
+            let A=Math.floor((Math.random()*Adj.length));
+            let N=Math.floor((Math.random()*Noun.length));
+            let V=Math.floor((Math.random()*Verb.length));
+            let M=Math.floor((Math.random()*Meme.length));
+            output+=Adj[A];
+            output+=Noun[N];
+            document.getElementById("content1").innerHTML=output;
+            output="";
+            output+=Verb[V];
+            output+="!";
+            document.getElementById("content2").innerHTML=output;
+            let temp=document.getElementById("image");
+            temp.setAttribute("src",Meme[M]);
+        }
+        function f(){
+            window.location.reload(true);
+        }
+        window.addEventListener("load",start,false);
+    </script>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1 style="color: dimgray;">專案失敗了，是因為...</h1>
+        <h1><span id="content1"></span><span id="content2"></span></span></h1>
+        <img id="image" src="" onclick="f()">
+    </div>
+</body>
+</html>

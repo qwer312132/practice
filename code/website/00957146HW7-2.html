@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Local Storage</title>
+    <style type="text/CSS">
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            background-color: lightblue;
+            font-family: Perpetua;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        th {
+            text-align: center;
+            color: white;
+            background-color: darkblue;
+        }
+
+        tr.oddrow {
+            background-color: white;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        // TODO
+        var addB;
+        var removeB;
+        var tags;
+        function start() {
+            addB = document.getElementById("addButton");
+            removeB = document.getElementById("removeAllButton");
+            addB.addEventListener("click", addfun, false);
+            removeB.addEventListener("click", removefun, false);
+            show();
+        }
+        function addfun() {
+            let title = document.getElementById("title").value;
+            let author = document.getElementById("author").value;
+            let year = document.getElementById("year").value;
+            let url = document.getElementById("url").value;
+            let time = new Date();
+            var data = {
+                "title": title,
+                "author": author,
+                "year": year,
+                "url": url
+            };
+            data= JSON.stringify(data);
+            //console.log(data);
+            localStorage.setItem("ntou-"+time.getTime(),data);
+            show();
+        }
+        function removefun() {
+            localStorage.clear();
+            show();
+        }
+        function show() {
+            var length = localStorage.length;
+            if(length==0){
+                document.getElementById("display").innerHTML="<table><tr><th>Title</th><th>Author</th><th>Year</th><th>URL</th></tr></table>";
+                return;
+            }
+            tags = [];
+            for (let i = 0; i < length; i++) {
+                tags[i] = localStorage.key(i);
+            }
+            var output = "<table><tr><th>Title</th><th>Author</th><th>Year</th><th>URL</th></tr >";
+            for (var tag in tags) {
+                let temp = localStorage.getItem(tags[tag]);
+                temp = JSON.parse(temp);
+                output += "<tr><td>"+temp.title+"</td><td>"+temp.author+"</td><td>"+temp.year+"</td><td><a href='"+temp.url+"'>"+temp.url+"</a></td></tr>";
+            }
+            output+="</table>";
+            document.getElementById("display").innerHTML=output;
+            
+        }
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <a href="https://qwer312132.github.io/homework/00957146HW7-2.html">Github link</a>
+    <form action="#">
+        <p>
+            <label>Book Title:<input type="text" id="title"></label>
+            <label>Author(s):<input type="text" id="author"></label>
+            <label>Year:<input type="number" id="year"></label>
+            <label>Book URL:<input type="url" id="url"></label>
+        </p>
+        <p>
+            <input type="button" value="Add New Item" id="addButton">
+            <input type="button" value="Remove All Items" id="removeAllButton">
+        </p>
+    </form>
+    <hr>
+    <div id="display">
+    </div>
+</body>
+
+</html>

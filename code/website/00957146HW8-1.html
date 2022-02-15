@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        img {
+            height: 300px;
+            width: 300px;
+
+        }
+
+        div {
+            float: left;
+        }
+
+        p {
+            text-align: center;
+            font-size: 20px;
+            color: navy;
+            font-weight: bold;
+            font-family: "Helvetica", "Microsoft YaHei", "LiHei Pro", "TW-Kai";
+        }
+    </style>
+    <script>
+        var arr = "多拉A夢 任意門 時光機 竹蜻蜓 時光布 記憶麵包 縮小燈 翻譯蒟蒻 如果電話亭 穿透環 更衣照相機".split(' ');
+        function start() {
+            setInterval(change, 1000);
+        }
+        function change() {
+            let num = Math.floor(Math.random() * 11);
+            console.log(num);
+            if (num == 10) {
+                document.getElementById("acc").setAttribute("src", num + ".png");
+            }
+            else {
+                document.getElementById("acc").setAttribute("src", "0" + num + ".png");
+            }
+            document.getElementById("name").innerHTML = arr[num];
+        }
+        window.addEventListener("load", start, false);
+    </script>
+</head>
+
+<body>
+    <div>
+        <p><audio controls=controls>
+                <source src="doraemon-bg.mp3" type="audio/mpeg">
+            </audio></p>
+        <p><img id="acc"></p>
+        <p id="name"></p>
+    </div>
+</body>
+
+</html>

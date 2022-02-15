@@ -1,0 +1,141 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #num1,#num2,#num3{
+            border-style: solid;
+            border-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>四則運算結果</h1>
+    <span id="num1"></span><span id=operation></span><span id="num2"></span>=<span id="num3"></span>
+    <script>
+        var op;
+        op=window.prompt("請輸入算數運算子: 1代表(+)、2代表(-)、3代表(*)、4代表(/)");
+        if(op>4||op<1||isNaN(op)){
+            op=1;
+            window.alert("輸入有誤!選項自動設為1。");
+        }
+        var first;
+        first=window.prompt("請輸入第一個數字:");
+        if(isNaN(first)){
+            window.alert("輸入有誤!數值自動設定為0。");
+            first=0;
+        }
+        var second;
+        second=window.prompt("請輸入第一個數字:");
+        if(isNaN(second)){
+            window.alert("輸入有誤!數值自動設定為0。");
+            second=0;
+        }
+        op=parseInt(op);
+        first=parseInt(first);
+        second=parseInt(second);
+        document.getElementById("num1").innerHTML=first;
+        document.getElementById("num2").innerHTML=second;
+        switch(op){
+            case 1:
+                document.getElementById("num3").innerHTML=(first+second);
+                document.getElementById("operation").innerHTML=('+');
+                break;
+            case 2:
+                document.getElementById("num3").innerHTML=(first-second);
+                document.getElementById("operation").innerHTML=('-');
+                break;
+            case 3:
+                document.getElementById("num3").innerHTML=(first*second);
+                document.getElementById("operation").innerHTML=('*');
+                break;
+            case 4:
+                document.getElementById("num3").innerHTML=(first/second);
+                document.getElementById("operation").innerHTML=('/');
+                break;
+        }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Basic DOM</title>
+    <style type="text/CSS">
+        @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+        h1 {
+			font-size: 50px;
+			font-family: cwTeXYen;
+		}
+
+		div {
+			font-size: 80px;
+			font-family: Consolas;
+			margin: 5px;
+			float: left;
+		}
+		div.number {
+			border: 1px solid black;			
+			color: dodgerblue;
+		}
+	</style>
+</head>
+
+<body>
+    <h1>四則運算結果:</h1>
+    <div class="number" id="num1">Number1</div>
+    <div id="op"></div>
+    <div class="number" id="num2">Number2</div>
+    <div>=</div>
+    <div class="number" id="result">Result</div>
+    <script>
+        var op;
+        op=window.prompt("請輸入算數運算子: 1代表(+)、2代表(-)、3代表(*)、4代表(/)");
+        if(op>4||op<1||isNaN(op)){
+            op=1;
+            window.alert("輸入有誤!選項自動設為1。");
+        }
+        var first;
+        first=window.prompt("請輸入第一個數字:");
+        if(isNaN(first)){
+            window.alert("輸入有誤!數值自動設定為0。");
+            first=0;
+        }
+        var second;
+        second=window.prompt("請輸入第一個數字:");
+        if(isNaN(second)){
+            window.alert("輸入有誤!數值自動設定為0。");
+            second=0;
+        }
+        op=parseInt(op);
+        first=parseInt(first);
+        second=parseInt(second);
+        document.getElementById("num1").innerHTML=first;
+        document.getElementById("num2").innerHTML=second;
+        switch(op){
+            case 1:
+                document.getElementById("result").innerHTML=(first+second);
+                document.getElementById("op").innerHTML=('+');
+                break;
+            case 2:
+                document.getElementById("result").innerHTML=(first-second);
+                document.getElementById("op").innerHTML=('-');
+                break;
+            case 3:
+                document.getElementById("result").innerHTML=(first*second);
+                document.getElementById("op").innerHTML=('*');
+                break;
+            case 4:
+                document.getElementById("result").innerHTML=(first/second);
+                document.getElementById("op").innerHTML=('/');
+                break;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>homework</title>
+    <style>
+        body{
+            font-size: 1.3em;
+            font-family: Perpetua;
+        }
+        p::first-letter{
+            font-size: 1.5em;
+        }
+        input{
+            color : blue;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <form method = "post" action="https://ntouweb2021.herokuapp.com/">
+        <p>
+            Your name:
+            <input type="text" name="fullname" id="fullname">
+            
+        </p>
+        <p>
+            Your email:
+            <input type="email" name="email" id="email">
+            (name@domain.com)
+        </p>
+        <p>
+            Your homepage's URL:
+            <input type="url" name="url" id="url">
+            (http://ww.domainname.com)
+        </p>
+        
+        <p>
+
+            Your birthday date:
+            <input type="date" name="date" id="date">
+            (yyyy-mm-dd)
+        </p>
+        <p>
+            
+            Your favorate color:
+            <input type="color" name="color" id="color">
+        </p>            
+        <p>    
+            Your Department:
+            <input type="text" list="department" name="department"  />
+            <datalist id="department">
+                <option value="Department of Aquaculture">
+                <option value="Department of Bioscience and Biotechnology">
+                <option value="Department of Communications, Navigation and Control Engineering">
+                <option value="Department of Computer Science and Engineering">
+                <option value="Department of Electrical Engineering">
+                <option value="Department of Environmental Biology and Fisheries Science">
+                <option value="Department of Food Science">
+                <option value="Department of Harbor and River Engineering">
+                <option value="Department of Marine Engineering">
+                <option value="Department of Marine Environmental Informatics">
+                <option value="Department of Mechanical and Mechatronic Engineering">
+                <option value="Department of Merchant Marine">
+                <option value="Department of Optoelectronics and Materials Technology">
+                <option value="Department of Shipping and Transportation Management">
+                <option value="Department of Systems Engineering and Naval Architecture">
+                <option value="Department of Transportation Science">
+            </datalist>
+            
+        </p>    
+        <p>Check off all of the characteristics that you enjoyed about the college:</p>
+        <p>
+            <label>
+                <input type="checkbox" value="Campus" name="likes">Campus    
+            </label>
+            <label>
+                <input type="checkbox" value="Student" name="likes">Student
+            </label>
+            <label>
+                <input type="checkbox" value="Location" name="likes">Location
+            </label>
+        </p>
+        <p>
+            How do you become interested in our college:<br>
+            <label>
+                <input type="radio" value="Friend" name="interest">Friend
+            </label>
+            <label>
+                <input type="radio" value="Television" name="interest">Television
+            </label>
+            <label>
+                <input type="radio" value="Internet" name="interest">Internet
+            </label>
+            
+        </p>
+        <p>
+            <label>
+                <input type="submit" value="submit" style="color: firebrick;">
+                <input type="reset" value="reset" style="color: firebrick;">
+            </label>
+        </p>
+    </form>
+</body>
+
+</html>

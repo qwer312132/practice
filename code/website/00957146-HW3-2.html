@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>00957146-HW3-2</title>
+    <style>
+        iframe {
+            width: 100%;
+            height: 550px;
+        }
+        h1 {
+            text-align: center;
+            color: royalblue;
+        }
+        nav {
+            font-weight: bold;
+            color: white;
+            border: 2px solid RoyalBlue;
+            text-align: center;
+            
+            background-color: RoyalBlue;
+            float:left;
+            width:calc(100%/6);
+            box-sizing:border-box;
+        }
+        nav ul {           
+            display: none;
+            margin:0px;
+            padding:0px;
+            list-style: none;
+            width:calc(100%/6);
+            position:absolute;
+        }
+        nav:hover ul {
+            display: block;
+        }
+        nav ul li {
+            /* width:100%; */
+            border-top: 2px solid RoyalBlue;
+            background-color: white;
+            color: black;
+        }
+        nav ul li:hover {
+            background-color: PowderBlue;
+        }
+        a {
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 600px){
+            nav ul {           
+                display: none;
+                margin:0px;
+                padding:0px;
+                list-style: none;
+                width:100%;
+                position:relative;
+            }
+            nav {
+                font-weight: bold;
+                color: white;
+                border: 2px solid RoyalBlue;
+                text-align: center;
+                width: 100%;
+                background-color: RoyalBlue;
+                box-sizing:border-box;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Web Intelligence</h1>
+    <nav>
+        Javascript
+        <ul>
+            <li><a href="https://www.w3schools.com/js/default.asp">W3Schools</a></li>
+            <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript">MDN</a></li>
+            <li><a href="https://www.json.org/json-en.html">JSON</a></li>
+        </ul>
+    </nav>
+    <nav>
+
+        jQuery
+        <ul>
+            <li><a href="https://jquery.com/">jQuery.org</a></li>
+            <li><a href="https://jqueryui.com/">jQuery UI</a></li>
+            <li><a href="https://www.w3schools.com/jquERy/default.asp">jQuery Tutorial</a></li>
+        </ul>
+    </nav>
+    <nav>
+
+        node.js
+        <ul>
+            <li><a href="https://www.w3schools.com/nodejs/">Node.js Tutorial</a></li>
+        </ul>
+    </nav>
+    <nav>    
+        PHP
+    </nav>
+    <nav>
+        ASP.Net
+    </nav>
+    <nav>
+        Servlet/JSP
+    </nav>
+    
+    <iframe src="./00957146-HW3-1.html"></iframe>
+</body>
+
+</html>

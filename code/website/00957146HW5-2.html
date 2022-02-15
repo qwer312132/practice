@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img{
+            height:50px;
+            width:50px;
+        }
+    </style>
+</head>
+<body>
+    <h>Side Length(&lt=10):<input type="number" id="number" value="5"><input type="button" id="tri" value="Draw Baseball Triangle"><input type="button" id="squ" value="Draw Baseball Square"></h>
+    <hr>
+    <div id="content">
+
+    </div>
+
+    <script>
+        var len;
+        var tributton;
+        var squbutton;
+        var output="";
+        function start(){
+            tributton=document.getElementById("tri");
+            squbutton=document.getElementById("squ");
+            tributton.addEventListener("click",trifun,false);
+            squbutton.addEventListener("click",squfun,false);
+        }
+        function trifun(){
+            len=document.getElementById("number").value;
+            output="";
+            if(len>10||len<1){
+                window.alert("You input an invalid value!");
+                location.reload();
+                document.getElementById("number").value=5;
+                return;
+            }
+            for(let i=0;i<len;i++){
+                for(let j=i+1;j<len;j++){
+                    output+="<img src='blank.png'>";
+                }
+                for(let j=0;j<=i;j++){
+                    output+="<img src='baseball.jpg'>";
+                }
+                output+="<br>";
+            }
+            document.getElementById("content").innerHTML=output;
+        }
+        function squfun(){
+            len=document.getElementById("number").value;
+            output="";
+            if(len>10||len<1){
+                window.alert("You input an invalid value!");
+                document.getElementById("number").value=5;
+                return;
+            }
+            for(let i=0;i<len;i++){
+                for(let j=0;j<len;j++){
+                    output+="<img src='baseball.jpg'>";
+                }
+                output+="<br>";
+            }
+            document.getElementById("content").innerHTML=output;
+        }
+        window.addEventListener("load",start,false);
+    </script>
+</body>
+</html>

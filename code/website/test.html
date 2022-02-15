@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width:100%;
+            height:600px;
+        }
+        #qwer{
+            width:70%;
+            background-image:url("board.jpg");
+            background-repeat:no-repeat;
+            background-size: 480px 80%;
+            background-position: 50% 50%;
+        }
+        #board{
+            /* border:1px; */
+            border-color: navy;
+        }
+        table,tr,td{
+            border:1px solid navy;
+        }
+    </style>
+    <script>
+        var step=0;
+        var board=new Array(2);
+        for(let i=0;i<2;i++){
+            board[i]=new Array(2);
+        }
+        function start(){
+            for(let i=0;i<2;i++){
+                
+                for(let j=0;j<2;j++){
+                    let temp="c"+i;
+                    temp+=j;
+                    console.log(temp);
+                    board[i][j]=document.getElementById(temp);
+                }
+            }
+        }
+        function change(x,y){
+            console.log("test");
+            board[x][y].setAttribute("style","background-image:url('oops.png');");
+            
+        }
+        window.addEventListener("load",start,false);
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td rowspan="2" id="qwer">
+                <table id="test">
+                    <tr>
+                        <td onclick="change(0,0)" id="c00"></td>
+                        <td onclick="change(0,1)" id="c01"></td>
+                    </tr>
+                    <tr>
+                        <td onclick="change(1,0)" id="c10"></td>
+                        <td onclick="change(1,1)" id="c11"></td>
+                    </tr>
+                </table>
+            </td>
+            <td>zxcv</td>
+        </tr>
+        <tr>
+            <td>
+                asdf
+            </td>            
+        </tr>
+    </table>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var t;
+        function start(){
+            v=document
+        }
+        window.addEventListener("load",start,false);
+    </script>
+</head>
+<body>
+    <input id="t" type="button" onclick="fun">
+</body>
+</html> -->
